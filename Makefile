@@ -1,10 +1,13 @@
-CC=gcc
+CC=cc
 CFLAGS=-c -Wall
-LDFLAGS=
+LDFLAGS=-ldl
 SERVER_DIR=./server/
+MODULES_DIR=./modules/
+
 SOURCES=main.c \
 	$(SERVER_DIR)module.c \
-	$(SERVER_DIR)core.c
+	$(SERVER_DIR)core.c \
+	$(SERVER_DIR)util.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=mediad
 
