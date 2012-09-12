@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "server/core.h"
 #include "server/module.h"
 
 int main()

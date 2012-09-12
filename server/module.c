@@ -55,7 +55,7 @@ int module_load()
 		log_message("%s%s\n","Loading module: mod_", ent->d_name);
 
 		num_modules++;
-		modules = util_alloc(modules, num_modules * sizeof(module_t *));
+		modules = util_alloc(modules, num_modules * sizeof(*module));
 		if (modules != NULL)
 		{
 			module_init();
