@@ -3,7 +3,6 @@
 #include <string.h>
 #include <dirent.h>
 #include <dlfcn.h>
-#include "mediad.h"
 #include "core.h"
 #include "util.h"
 
@@ -14,6 +13,6 @@ typedef struct
 	void *handle;
 } module_t;
 
-int module_load();
+int module_load(const char *modules_path);
+int module_reload(const char *modules_path);
 int module_unload();
-int module_reload();

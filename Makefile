@@ -1,3 +1,4 @@
+#valgrind --leak-check=full ./mediad
 CC=cc
 CFLAGS=-c -Wall
 LDFLAGS=-ldl
@@ -7,6 +8,7 @@ MODULES_DIR=./modules/
 SOURCES=main.c \
 	$(SERVER_DIR)module.c \
 	$(SERVER_DIR)core.c \
+	$(SERVER_DIR)config.c \
 	$(SERVER_DIR)util.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=mediad
