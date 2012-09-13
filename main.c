@@ -9,8 +9,11 @@ int main()
 	module_load(MODULES_PATH);
 	module_unload();
 	
-	/* module.h tests */
+	/* config.c tests */
 	config_load(CONFIG_PATH);
+	
+	printf("value: %s", (char *)config_get_entry_value("port"));
+	
 	config_free_entries();
 	
 	return 0;

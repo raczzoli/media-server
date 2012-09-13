@@ -12,8 +12,6 @@ int config_load(const char *file_path)
 	char line[CONFIG_MAX_LINE_LENGTH];
 	char *name			= NULL;
 	char *value			= NULL;
-	int name_length		= 0;
-	int value_length	= 0;
 	
 	config_entry_t *entry = NULL;
 	
@@ -39,14 +37,8 @@ int config_load(const char *file_path)
 					entry = malloc(sizeof(*entry));
 					if (entry != NULL)
 					{
-						name_length		= strlen(name) + 1;
-						value_length	= strlen(value) + 1;
-						
-						entry->name 	= malloc(name_length);
-						entry->value 	= malloc(value_length);
-						
-						memcpy(entry->name, name, name_length);
-						memcpy(entry->value, value, value_length);
+						entry->name 	= strdup(name);
+						entry->value 	= strdup(value);
 						
 						config_entries[num_entries-1] = entry;
 					}
