@@ -3,6 +3,7 @@
 #include "server/module.h"
 #include "server/config.h"
 
+
 int main()
 {
 	/* module.c tests */
@@ -12,7 +13,8 @@ int main()
 	/* config.c tests */
 	config_load(CONFIG_PATH);
 	
-	printf("value: %s", (char *)config_get_entry_value("port"));
+	printf("port value: %s\n", (char *)config_get_entry_value("port"));
+	printf("url value: %s\n", (char *)config_get_entry_value("url"));
 	
 	config_free_entries();
 	
