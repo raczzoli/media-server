@@ -1,4 +1,4 @@
-#valgrind --leak-check=full ./mediad
+#valgrind --leak-check=full ./media-server
 CC=cc
 CFLAGS=-c -Wall
 LDFLAGS=-ldl
@@ -8,10 +8,11 @@ MODULES_DIR=./modules/
 SOURCES=main.c \
 	$(SERVER_DIR)module.c \
 	$(SERVER_DIR)core.c \
+	$(SERVER_DIR)connection.c \
 	$(SERVER_DIR)config.c \
 	$(SERVER_DIR)util.c
 OBJECTS=$(SOURCES:.c=.o)
-EXECUTABLE=mediad
+EXECUTABLE=media-server
 
 all: $(SOURCES) $(EXECUTABLE)
 	
@@ -24,4 +25,4 @@ $(EXECUTABLE): $(OBJECTS)
 clean:
 	rm -rf *o \
 	$(SERVER_DIR)*o \
-	mediad
+	media-server
